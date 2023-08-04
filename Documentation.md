@@ -1,15 +1,31 @@
+# Overview 
+
+* Project 0:
+
+This is equivalent of the set-up sprint and will be part of the GIT exercises by setting up a GIT repository that will be used by rest of the projects for source and version management.
+
+* Project 1:
+   
+Involves building an automation process for archive files that can be controlled by REST API using Flask, Python and MYSQL that can be invoked from a remote machine.
+
+* Project 2:
+  
+This consist of building and dockerising the Python application from project 1
+
+
+
+
+
 # Asset Management
 
-Our path to production is dependent on the use of a Definitive Media Library to store the source of truth for our binary artifacts.
+Our path to production is dependent on the following technologies: 
 
 ### Servers
 
 Production:
  * [Nexus Repo]([Repo URL](http://localhost:8081/repository/docker-hub2/))
- * [Nexus IQ](IQ URL)
-
-
-### Dependency Management
+ 
+ ### Dependency Management
 
 Part of this solution will also provide an internal proxy of internal repositories.
 
@@ -32,29 +48,9 @@ JIRA/Confluence
 Workflow/Backlog:
 
 Physical Wallboard
-JIRA
-Pivotal
-TFS Work Items
-Excel
-SCM:
-
-GitHub Enterprise
-Microsoft TFS
-Security:
-
-Fortify
-Nexus IQ
-AppScan
-Testing:
-
-Selenium
-Continuous Integration:
-
-Jenkins
+GitHub:
+Nexus IQ:
+Jenkins:
 Deployment Automation:
 
-Jenkins
-??
-Release Management:
 
-???

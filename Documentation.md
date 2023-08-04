@@ -19,14 +19,14 @@ Using CI/CD pipeline to deploy the application.
 
 The overall path to production exists of a mix of technologies:
 
-* Workflow/Backlog:
-* Trello:
-* Python (Flask):
-* MySQL:
-* GitHub:
-* Docker:
-* Nexus IQ:
-* Jenkins:
+* Workflow/Backlog
+* Trello
+* Python (Flask)
+* MySQL
+* GitHub
+* Docker
+* Nexus IQ
+* Jenkins
 
 # Asset Management
 
@@ -44,12 +44,14 @@ Internal Proxy Repositories:
 Github Repo:
  * [Github] (https://github.com/saldev22/project1.git)
  
- ### Project steps 
+ # Project steps 
 
  * # Create a Python App using Flask module
 ![Python app](https://github.com/saldev22/project1/assets/114541841/71472a0a-7eeb-43e8-af7a-4d3f75d1606a)
 
- * 
+ * # Create My Sql database and table 
+   
+![MySql db](https://github.com/saldev22/project1/assets/114541841/5e27b05d-f987-4e4d-afc4-3c6e179b537d)
 
 
  

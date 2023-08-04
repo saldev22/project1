@@ -1,0 +1,149 @@
+Started by user QA Admin
+Obtained Jenkinsfile from git https://github.com/saldev22/project1.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /home/jenkins/.jenkins/workspace/Project2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /home/jenkins/.jenkins/workspace/Project2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/saldev22/project1.git # timeout=10
+Fetching upstream changes from https://github.com/saldev22/project1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/saldev22/project1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 6cd106796d82cbc672351b1e777964c4841fdf2c (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6cd106796d82cbc672351b1e777964c4841fdf2c # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk 4e41d3bc941ed5fb3e102e5d320aa477f2f6eda0 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $NEXUS_LOGIN or $NEXUS_LOGIN_PSW
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (build)
+[Pipeline] sh
++ sudo docker build -t localhost:8083/pythonapp:latest .
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 208B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3
+#3 DONE 0.6s
+
+#4 [1/4] FROM docker.io/library/python:3@sha256:9a1b705aecedc76e8bf87dfca091d7093df3f2dd4765af6c250134ce4298a584
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 11.16kB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/4] WORKDIR /usr/src/app
+#6 CACHED
+
+#7 [3/4] COPY . ./
+#7 DONE 0.2s
+
+#8 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+#8 2.285 Collecting blinker==1.6.2 (from -r requirements.txt (line 1))
+#8 2.360   Downloading blinker-1.6.2-py3-none-any.whl (13 kB)
+#8 2.399 Collecting click==8.1.3 (from -r requirements.txt (line 2))
+#8 2.407   Downloading click-8.1.3-py3-none-any.whl (96 kB)
+#8 2.414      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 19.9 MB/s eta 0:00:00
+#8 2.449 Collecting Flask==2.3.2 (from -r requirements.txt (line 3))
+#8 2.456   Downloading Flask-2.3.2-py3-none-any.whl (96 kB)
+#8 2.461      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.9/96.9 kB 157.6 MB/s eta 0:00:00
+#8 2.562 Collecting mysql-connector-python==8.0.33 (from -r requirements.txt (line 4))
+#8 2.574   Downloading mysql_connector_python-8.0.33-cp311-cp311-manylinux1_x86_64.whl (27.4 MB)
+#8 3.601      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.4/27.4 MB 19.6 MB/s eta 0:00:00
+#8 3.706 Collecting python-dateutil==2.8.2 (from -r requirements.txt (line 5))
+#8 3.711   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#8 3.725      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 25.5 MB/s eta 0:00:00
+#8 3.787 Collecting Werkzeug>=2.3.3 (from Flask==2.3.2->-r requirements.txt (line 3))
+#8 3.794   Downloading Werkzeug-2.3.6-py3-none-any.whl (242 kB)
+#8 3.804      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.5/242.5 kB 37.1 MB/s eta 0:00:00
+#8 3.838 Collecting Jinja2>=3.1.2 (from Flask==2.3.2->-r requirements.txt (line 3))
+#8 3.844   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+#8 3.851      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 36.4 MB/s eta 0:00:00
+#8 3.877 Collecting itsdangerous>=2.1.2 (from Flask==2.3.2->-r requirements.txt (line 3))
+#8 3.884   Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+#8 4.282 Collecting protobuf<=3.20.3,>=3.11.0 (from mysql-connector-python==8.0.33->-r requirements.txt (line 4))
+#8 4.294   Downloading protobuf-3.20.3-py2.py3-none-any.whl (162 kB)
+#8 4.304      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.1/162.1 kB 21.1 MB/s eta 0:00:00
+#8 4.333 Collecting six>=1.5 (from python-dateutil==2.8.2->-r requirements.txt (line 5))
+#8 4.341   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#8 4.435 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==2.3.2->-r requirements.txt (line 3))
+#8 4.441   Downloading MarkupSafe-2.1.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
+#8 4.541 Installing collected packages: six, protobuf, MarkupSafe, itsdangerous, click, blinker, Werkzeug, python-dateutil, mysql-connector-python, Jinja2, Flask
+#8 6.040 Successfully installed Flask-2.3.2 Jinja2-3.1.2 MarkupSafe-2.1.3 Werkzeug-2.3.6 blinker-1.6.2 click-8.1.3 itsdangerous-2.1.2 mysql-connector-python-8.0.33 protobuf-3.20.3 python-dateutil-2.8.2 six-1.16.0
+#8 6.040 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 6.215 
+#8 6.215 [notice] A new release of pip is available: 23.1.2 -> 23.2.1
+#8 6.215 [notice] To update, run: pip install --upgrade pip
+#8 DONE 7.4s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.6s done
+#9 writing image sha256:8e1aa5c34605cefede261fdfeb4a92ae337e7b06f97aca459565e76cec14131d done
+#9 naming to localhost:8083/pythonapp:latest done
+#9 DONE 0.6s
+[Pipeline] sh
++ sudo docker image ls
+REPOSITORY                 TAG         IMAGE ID       CREATED         SIZE
+localhost:8083/pythonapp   latest      8e1aa5c34605   1 second ago    1.12GB
+<none>                     <none>      4ca73e3a37b0   7 minutes ago   1.12GB
+localhost:8083/pythonapp   <none>      90ad6e6b92c1   11 hours ago    1.12GB
+jenkins/jenkins            lts-jdk11   a40a8916af1d   8 days ago      471MB
+sonatype/nexus3            latest      067a3887b789   9 days ago      551MB
+ubuntu                     latest      5a81c4b8502e   5 weeks ago     77.8MB
+localhost:8082/ubuntu      latest      5a81c4b8502e   5 weeks ago     77.8MB
+localhost:8083/ubuntu      latest      5a81c4b8502e   5 weeks ago     77.8MB
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (push)
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [NEXUS_LOGIN_PSW]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ sudo docker login localhost:8083 -u admin -p ****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] sh
++ sudo docker stop pythonapp
+pythonapp
+[Pipeline] sh
++ sudo docker rm pythonapp
+pythonapp
+[Pipeline] sh
++ sudo docker run -d -p 5000:5000 -e SQL_HOST=host.docker.internal --name pythonapp localhost:8083/pythonapp
+1cf60db3d2d28f6506596e08ede7cb99d72ccef4ea3f9122524638efff54e88b
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

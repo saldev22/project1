@@ -10,11 +10,22 @@ Involves building an automation process for archive files that can be controlled
 
 * Project 2:
   
-This consist of building and dockerising the Python application from project 1
+This consist of building and dockerising the Python application from project 1 , then using CI/CD pipeline to deploy the application.
 
 
 
+### Toolchain Overview
 
+The overall path to production exists of a mix of technologies:
+
+* Workflow/Backlog:
+* Trello:
+* Python (Flask):
+* MySQL:
+* GitHub:
+* Docker:
+* Nexus IQ:
+* Jenkins:
 
 # Asset Management
 
@@ -23,34 +34,21 @@ Our path to production is dependent on the following technologies:
 ### Servers
 
 Production:
- * [Nexus Repo]([Repo URL](http://localhost:8081/repository/docker-hub2/))
- 
- ### Dependency Management
-
-Part of this solution will also provide an internal proxy of internal repositories.
+Part of this solution will also provide an internal proxy of internal repositories.:
 
 Internal Proxy Repositories:
-
+ * [Nexus Repo]([Repo URL](http://localhost:8081/repository/docker-hub2/))
  * [Nexus](http://localhost:8081/repository/docker-proxy/)
+
+Github Repo:
+ * [Github] (https://github.com/saldev22/project1.git)
  
+ ### Project steps 
+
+ * # Create a Python App using Flask module
+![Python app](https://github.com/saldev22/project1/assets/114541841/71472a0a-7eeb-43e8-af7a-4d3f75d1606a)
+
+ * 
 
 
-
-### Toolchain Overview
-
-The overall path to production exists of a mix of technologies in terms of tools for project planning, backlog, tickets, SCM, build system, asset management, deployment, and release management.
-
-Ideation:
-
-Excel
-Pivotal
-JIRA/Confluence
-Workflow/Backlog:
-
-Physical Wallboard
-GitHub:
-Nexus IQ:
-Jenkins:
-Deployment Automation:
-
-
+ 

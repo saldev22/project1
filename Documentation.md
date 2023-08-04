@@ -13,6 +13,10 @@ Involves building an automation process for archive files that can be controlled
 This consist of building and dockerising the Python application from project 1.
 Using CI/CD pipeline to deploy the application.
 
+### Trello
+
+I utilised Trello as the service for my project management. 
+
 
 
 ### Toolchain Overview
@@ -28,10 +32,6 @@ The overall path to production exists of a mix of technologies:
 * Nexus IQ
 * Jenkins
 
-# Asset Management
-
-Our path to production is dependent on the following technologies: 
-
 ### Servers
 
 Production:
@@ -43,6 +43,9 @@ Internal Proxy Repositories:
 
 Github Repo:
  * [Github] (https://github.com/saldev22/project1.git)
+
+
+
  
  # Project steps 
 

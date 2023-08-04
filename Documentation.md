@@ -10,8 +10,8 @@ Involves building an automation process for archive files that can be controlled
 
 * Project 2:
   
-This consist of building and dockerising the Python application from project 1.: 
-Using CI/CD pipeline to deploy the application.:
+This consist of building and dockerising the Python application from project 1.
+Using CI/CD pipeline to deploy the application.
 
 
 
